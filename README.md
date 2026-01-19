@@ -52,6 +52,17 @@ Mosaik simulation scenarios should be in the `src/` folder and can be run within
 
 ## Extra notes, known issues, etc.
 
+### virtual environment (venv) doesn't activate automatically at devcontainer startup
+
+We are currently looking into this. This was working before by setting .vscode/settings.json settings:
+
+```json
+"python.terminal.activateEnvironment": true,
+"python.terminal.activateEnvInCurrentTerminal": true
+```
+
+But stopped working at some point. Kill all the integrated terminals and open a new one to activate venv.
+
 ### What about VSCodium and Podman?
 
 Unfortunately Dev Containers extension is not available for VSCodium. If you want to run this project inside a dev container on VSCodium you could take a look at [devpodcontainers project](https://github.com/3timeslazy/vscodium-devpodcontainers) which also is aware of Podman Container Engine (this project has not yet been tested with devpodcontainers extension).
