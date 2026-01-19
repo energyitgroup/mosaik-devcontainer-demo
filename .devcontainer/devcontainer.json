@@ -1,0 +1,16 @@
+{
+    "image": "mcr.microsoft.com/vscode/devcontainers/python:3.12-trixie",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.debugpy",
+                "ms-python.vscode-python-envs",
+                "mechatroner.rainbow-csv",
+                "charliermarsh.ruff",
+                "h5web.vscode-h5web"
+            ]
+        }
+    },
+    "postCreateCommand": "bash .devcontainer/post-create-script.sh"
+}
