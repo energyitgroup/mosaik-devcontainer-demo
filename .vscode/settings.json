@@ -10,5 +10,6 @@
     "python.languageServer": "Pylance",
     "python.analysis.typeCheckingMode": "standard",
     "python.terminal.activateEnvironment": true,
-    "python.terminal.activateEnvInCurrentTerminal": true
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "python.defaultInterpreterPath": "./.venv/bin/python"
 }
