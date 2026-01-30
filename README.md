@@ -4,15 +4,15 @@ This project includes a full development environment for working with Mosaik Co-
 
 ## How to get started
 
-To run this environment you only need `Visual Studio Code` with `devcontainers extension` and `Docker`. Everything else is included in the development environment. If you are familiar with devcontainers and have all of the required software installed, simply open VSCode and start the devcontainer via VSCode, otherwise follow the steps below: 
+To run this environment you only need `Visual Studio Code` with `devcontainers extension` and `Docker`. Everything else is included in the development environment. If you are familiar with devcontainers and have all of the required software installed, simply open VSCode and start the devcontainer via VSCode, otherwise follow the steps below:
 
 1. Install [Visual Studio Code](https://code.visualstudio.com/) and [Docker](https://www.docker.com/) (Docker Desktop is recommended for easy setup if you are not familiar with docker)
 2. Start Docker (or if you installed it, Docker Desktop)
 3. Start Visual Studio Code and open the folder of this project (upon opening, you should get a notification for recommended extension which includes `devcontainers` which you should install)
     - If you didn't get recommended `devcontainers` extension: click on the "extensions" menu icon on the left sidebar in Visual Studio Code and type `ms-vscode-remote.remote-containers` to the find the correct extension and install it
-5. You should get prompted to "Reopen the folder in Container", click on it and wait for the container to start
+4. You should get prompted to "Reopen the folder in Container", click on it and wait for the container to start
     - If you didn't get prompted to open the folder in a Dev Container, you can manually start and open the development environment by clicking on the icon on bottom left with a tooltip that says "Open a Remote window" and clicking on "Reopen in Container" option in the menu that is opened
-6. Doing this for the first time might take awhile depending on your internet speed, but your Visual Studio Code window should now be connected to the Development Environment! Read on to get an idea about the workflow inside the development environment
+5. Doing this for the first time might take awhile depending on your internet speed, but your Visual Studio Code window should now be connected to the Development Environment! Read on to get an idea about the workflow inside the development environment
 
 Once you are done you can try running a Mosaik Simulation Example by running the following command in the integrated terminal (if an integrated terminal is not open use the following shortcut: `CTRL+J`):
 
@@ -50,7 +50,7 @@ If you want to make a change to the environment of the dev container itself that
 
 Mosaik simulation scenarios should be in the `src/` folder and can be run within the terminal simply with `python src/my_sim_scenario.py`. If you are generating simulation data results into a HDF5 file you can view the data in this development environment by simply clicking on the file (HDF5 viewer VSCode extension is included in the dev container).
 
-## Extra notes, known issues, etc.
+## Extra notes, known issues
 
 ### What about VSCodium and Podman?
 
@@ -58,7 +58,7 @@ Unfortunately Dev Containers extension is not available for VSCodium. If you wan
 
 ### Why isn't uv included in the Dev Container?
 
-While [uv](https://docs.astral.sh/uv/) is a very powerful piece of Python tooling, we thought that we'd leave it out for the sake of simplicity. If uv is desired, it can easily be added to the Dev Container by e.g. adding the installation to the `.devcontainer/post-create-script.sh` script. 
+While [uv](https://docs.astral.sh/uv/) is a very powerful piece of Python tooling, we thought that we'd leave it out for the sake of simplicity. If uv is desired, it can easily be added to the Dev Container by e.g. adding the installation to the `.devcontainer/post-create-script.sh` script.
 
 ## Data, License, and information about Mosaik
 
