@@ -6,7 +6,7 @@ This project includes a full development environment for working with Mosaik Co-
 
 To run this environment you only need `Visual Studio Code` with `devcontainers extension` and `Docker`. Everything else is included in the development environment. If you are familiar with devcontainers and have all of the required software installed, simply open VSCode and start the devcontainer via VSCode, otherwise follow the steps below:
 
-1. Install [Visual Studio Code](https://code.visualstudio.com/) and [Docker](https://www.docker.com/) (Docker Desktop is recommended for easy setup if you are not familiar with docker)
+1. Install [Visual Studio Code](https://code.visualstudio.com/) and [Docker](https://www.docker.com/) (Docker Desktop is recommended for easy setup if you are not familiar with docker. Additionally, if you are on Windows, it is highly recommended to select "use WSL integration" during installation).
 2. Start Docker (or if you installed it, Docker Desktop)
 3. Start Visual Studio Code and open the folder of this project (upon opening, you should get a notification for recommended extension which includes `devcontainers` which you should install)
     - If you didn't get recommended `devcontainers` extension: click on the "extensions" menu icon on the left sidebar in Visual Studio Code and type `ms-vscode-remote.remote-containers` to the find the correct extension and install it
@@ -51,6 +51,46 @@ If you want to make a change to the environment of the dev container itself that
 Mosaik simulation scenarios should be in the `src/` folder and can be run within the terminal simply with `python src/my_sim_scenario.py`. If you are generating simulation data results into a HDF5 file you can view the data in this development environment by simply clicking on the file (HDF5 viewer VSCode extension is included in the dev container).
 
 ## Extra notes, known issues
+
+### Setting up the environment in WSL without using Docker and Containers
+
+If you want to set up the environment manually in WSL (without using Docker and containers), you can follow the below instructions to set up a WSL environment. For this you may want to click on the "don't show again" button when a "Reopen in Container" popup appears to avoid mixing up WSL and container environments.
+
+It is recommended to run the following commands in Powershell instead of Command Prompt on windows:
+
+1. [create a new WSL environment](https://learn.microsoft.com/en-us/windows/wsl/install) (by default WSL uses Ubuntu, which is fine for our purposes): `wsl --install` (make sure to remember the username and password you set up for WSL)
+
+2. navigate to your WSL home folder and clone the repository (in the below commands we create a folder called "projects" and clone this repository into the projects folder):
+
+    ```shell
+    cd # takes you to your home folder
+    mkdir projects
+    cd projects
+    git clone https://github.com/energyitgroup/mosaik-devcontainer-demo
+    ```
+
+3. you can close your terminal now and move back to windows, then open VSCode (on windows, not inside WSL)
+
+4. In VSCode, click the bottom left button on the statusbar (tooltip says "Open a Remote Window") and select "Connect to WSL using Distro" in the opened menu and select the Distro you used to set up WSL (Ubuntu by default)
+
+5. click on "open folder" button in your sidebar, select / traverse the path to the cloned repository folder (if you ran the above commands: click on projects, then on the repository path and click OK)
+
+6. run the setup manually in the WSL connected VSCode terminal (open with CTRL+J). This will prompt for your WSL user's password which you set up earlier:
+
+    ```shell
+    # update system (WSL Ubuntu) packages and install venv module for python
+    sudo apt update && sudo apt upgrade -y
+    sudo apt install python3.12-venv
+
+    # set up venv folder, activate it and install the required python packages for this project
+    python3 -m venv .venv
+    source .venv/bin/activate
+    python -m pip install -r requirements.txt
+    ```
+
+7. While it is not necessary, it is recommended to install the extensions that are listed in the configuration file at .devcontainer/devcontainer.json (these extensions will be installed in your WSL environment and will be available in VSCode while connected to the said environment)
+
+You should be done now! You can now run Mosaik simulations. You can always access the WSL environment by following the above steps from 3. to 5. (and in case it is not activated, by activating the .venv with the command `source .venv/bin/activate`).
 
 ### What about VSCodium and Podman?
 
