@@ -103,3 +103,6 @@ While [uv](https://docs.astral.sh/uv/) is a very powerful piece of Python toolin
 ## Data, License, and information about Mosaik
 
 Simbench datasets included in this project are [licensed under the Open Database License](https://simbench.de/en/download/). Mosaik is created and developed by OFFIS e.V. and is [licensed under LGPL](https://gitlab.com/mosaik/mosaik/-/blob/develop/LICENSE.txt). This repository is licensed under MIT License.
+
+### Funding Acknowledgement
+The adaptions on the original MOSAIK respository has been prepared within the LVLV project as part of the of the Clean Energy Transition Partnership under the CETPartnership Joint Call 2024. The views and opinions expressed in this document are solely those of the authors and do not necessarily reflect those of the funding organisations or the European Union. Neither the funding organisations nor the European Union can be held responsible for any use that may be made of the information contained herein.
